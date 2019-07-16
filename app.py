@@ -10,7 +10,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 def home():
     if 'username' in flask_session:
         email = flask_session['email']
-        return render_template('User_HomePage.html',user=email)
+        return render_template('HomePage.html',user=email)
     elif 'farmname' in flask_session:
         farmname = flask_session['farmname']
         return render_template('Farm_HomePage.html',farm=farmname,my_products=get_owner_products(farmname))
